@@ -4,9 +4,6 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const bcrypt = require('bcrypt');
 
-// import {dirname } from "path";
-// import { fileURLToPath } from "url";
-
 
 const saltRounds = 10;
 const app = express();
@@ -27,7 +24,7 @@ const registrationSchema = new mongoose.Schema({
 const Registration  = mongoose.model("Registration", registrationSchema);
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
-// const __dirname = dirname(fileURLToPath(import.meta.url));
+
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
